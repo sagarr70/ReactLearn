@@ -1,1 +1,29 @@
  // ^ means latest minor version , ~ means latest patch version
+// do not push regenrative files on git like ( node_modules )
+
+// npm means to call npm to install / uninstall some package for package management
+// npx is used to actually execute the installed package
+// npx parcel index.html
+
+// cdn links are not a preffered way to inject react in an application
+// it is a costly operation { it will generate a network call } , no management for version upgradation { like ~ or ^} will always require link replacement
+// we can install it via npm 
+
+
+// parcel
+-> Dev Build
+-> Local Server
+-> HMR = Hot Module replacement
+-> File Watching Algorithm ->  Written in c++
+-> Caching - faster builds
+-> Image Optimization
+-> Minification 
+-> Bundling
+-> Compress
+-> Consistent Hashing
+-> Differential Bundling -supports older browsers 
+-> Diagnostic
+-> Error Handling
+-> HTTPs 
+-> Tree Shacking -> remove unused code 
+-> different dev and production builds
