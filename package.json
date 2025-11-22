@@ -1,0 +1,23 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "learning react from namaste react",
+  "homepage": "https://github.com/sagarr70/ReactLearn#readme",
+  "bugs": {
+    "url": "https://github.com/sagarr70/ReactLearn/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarr70/ReactLearn.git"
+  },
+  "license": "ISC",
+  "author": "sagar aggarwal",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "parcel": "^2.16.1"
+  }
+}
