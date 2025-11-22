@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header-class {
+            font-family: Arial, sans-serif;
+            font-size: 200px;
+        }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>    
+        const root = document.getElementById('root');
+        const heading = document.createElement('h1');
+        heading.innerHTML = 'Hello World!';
+        
+        heading.style.color = 'blue';
+        heading.className = 'header-class';
+        root.appendChild(heading);
+    </script>
+</body>
+</html>

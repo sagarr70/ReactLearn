@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Hello above</h1>
+    <div id="root">
+        <h1>Sagar is here</h1> //will be replaced by React
+    </div>
+    <h1>hello below</h1>
+   
+    // Order matters here: React and ReactDOM must be loaded before app.js
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
