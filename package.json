@@ -13,6 +13,8 @@
   "license": "ISC",
   "author": "sagar aggarwal",
   "scripts": {
+    "start": "parcel indexwithReact.html",
+    "build": "parcel build indexwithReact.html",
     "test": "jest"
   },
   "dependencies": {
