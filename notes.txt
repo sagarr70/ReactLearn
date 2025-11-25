@@ -27,3 +27,7 @@
 -> HTTPs 
 -> Tree Shacking -> remove unused code 
 -> different dev and production builds
+
+
+// bable 
+Transcompiler for jsx 
