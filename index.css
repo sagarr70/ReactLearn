@@ -87,3 +87,9 @@
     height: 30%;
     justify-content: center;
 }
+
+.crousel{
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+}

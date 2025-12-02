@@ -1,4 +1,5 @@
 import ReactDom from "react-dom/client";
+import CorousalComponent from "./corousel";
 
 const resDataList = [
   {
@@ -568,6 +569,7 @@ const BodyComponent = () => {
         />
         <button className="search-button">Search</button>
       </div>
+      <CorousalComponent />
       <div className="restaurant-container">
         {resDataList.map((restaurant) => (
           <RestaurantCardComponent
@@ -602,8 +604,10 @@ const AppLayout = () => {
   return (
     <div className="app">
       <HeaderComponent />
+      
       <BodyComponent />
       <FooterComponent />
+     
     </div>
   );
 };
