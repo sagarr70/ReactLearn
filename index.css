@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
+    position: sticky;
+    background-color: white;
+    top: 0;
+    z-index: 1; 
     
 }
 .logo-container{
@@ -72,10 +76,10 @@
 .restaurant-card{
     cursor: pointer;
     width: 25%;
-    
     margin: 4%;
     display: inline-block;
     background-color: rgb(246, 241, 241);
+    text-decoration: none !important;
 }
 .restaurant-card:hover{
    border: 1px solid black;

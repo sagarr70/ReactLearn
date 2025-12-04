@@ -1,7 +1,7 @@
 import CorousalComponent from "./Corousel.js";
 import RestaurantCardComponent from "./RestaurantCardComponent.js";
 import resDataList from "../utils/mockData.js";
-import { IMAGE_BASE_URL } from "../utils/constants.js";
+import { IMAGE_BASE_URL , SWIGGY_API} from "../utils/constants.js";
 import { useState , useEffect} from "react";
 import ShimerComponent from "./ShimerComponent.js";
 
@@ -18,9 +18,9 @@ const BodyComponent = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5597411&lng=77.2512483&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const response = await fetch(SWIGGY_API);
       const jsonData = await response.json();
-      const staticResDataList = jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      const staticResDataList = jsonData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
       setFilteredResDataList(staticResDataList);
       setResDataListView(staticResDataList);
       

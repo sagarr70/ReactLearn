@@ -1,7 +1,9 @@
+import { Link } from "react-router";
 // Restaurant Card Component
 const RestaurantCardComponent = (props) => {
   const { id, name, cuisine, rating, imageUrl, price } = props;
   return (
+    <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={`/restaurant/${id}`}>
     <div className="restaurant-card" uniquekey={id}>
       <img src={imageUrl} alt={name} className="restaurant-image" />
       <div className="restaurant-info">
@@ -11,6 +13,7 @@ const RestaurantCardComponent = (props) => {
         <p className="restaurant-price">Price: {price}</p>
       </div>
     </div>
+    </Link>
   );
 };
 
