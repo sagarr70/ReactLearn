@@ -7,13 +7,20 @@ import ContactComponent from "./components/ContactComponent.js";
 import ErrorComponent from "./components/ErrorComponent.js";
 import RestaurantMenuComponent from "./components/RestaurantMenuComponent.js";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import { useState} from "react";
 
 // App Component Layout
 const AppLayout = () => {
+
+  const [counter,setCounter]= useState(0);
+
+
+
   return (
     <div className="app">
-      <HeaderComponent />
-      <Outlet />
+      <HeaderComponent counterprop={counter} />
+      {/* pass counter and Increment to routed children via Outlet context */}
+      <Outlet context={{ counter, setCounter }} />
       <FooterComponent />
     </div>
   );
@@ -27,18 +34,22 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <BodyComponent />,
+        errorElement: <ErrorComponent />,
       },
       {
         path: "/about",
         element: <AboutComponent />,
+        errorElement: <ErrorComponent />,
       },
       {
         path: "/contact",
         element: <ContactComponent />,
+        errorElement: <ErrorComponent />,
       },
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenuComponent />,
+        errorElement: <ErrorComponent />,
       }
     ],
     errorElement: <ErrorComponent />,

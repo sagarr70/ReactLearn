@@ -4,17 +4,27 @@ import resDataList from "../utils/mockData.js";
 import { IMAGE_BASE_URL , SWIGGY_API} from "../utils/constants.js";
 import { useState , useEffect} from "react";
 import ShimerComponent from "./ShimerComponent.js";
+import { useOutletContext } from "react-router";
 
 // Body Component
-const BodyComponent = () => {
+const BodyComponent = (props) => {
+  // read counter and Increment from Outlet context when rendered as a routed child
+  const outletContext = useOutletContext?.() || {};
+  const { counter, setCounter } = outletContext;
 
   const [resDataListView, setResDataListView] = useState([]) ;
   const [filteredResDataList, setFilteredResDataList] = useState([]) ;
   const [searchQuery, setSearchQuery] = useState("");
-
+  
   useEffect(() => {
+    console.log("Fetching restaurant data...");
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const filtered = resDataListView.filter(restaurant => restaurant.info.name.toLowerCase().includes(searchQuery) || restaurant.info.cuisines.some(cuisine => cuisine.toLowerCase().includes(searchQuery)));
+    setFilteredResDataList(filtered);
+  }, [searchQuery]);
 
   const fetchData = async () => {
     try {
@@ -34,6 +44,10 @@ const BodyComponent = () => {
 
     return resDataListView.length === 0 ? <ShimerComponent /> : (
     <div className="app-body">
+      <div>
+        Counter : {counter} &nbsp;
+        <button onClick={ () => setCounter(counter + 1) } >Increment Counter</button>
+      </div>
       <div className="search-bar">
         <input
           id="search-input"

@@ -1,9 +1,18 @@
 import { APP_LOGO_URL } from "../utils/constants";
 import { useState, useEffect, use } from "react";
-import { Link } from "react-router";
+import { Link , useLocation} from "react-router";
 
 // Header Component
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
+
+  const { counterprop } = props; 
+
+  const location = useLocation();
+
+  const showFlag = location.pathname === "/";
+
+  console.log("Header Component Rendered");
+
   const [loginButtonText, setLoginButtonText] = useState("Login");
   useEffect(() => {
     console.log("Header Component useEffect Rendered");
@@ -16,9 +25,15 @@ const HeaderComponent = () => {
       </div>
       <div className="nav-items">
         <ul>
+          {showFlag &&(
+          <li>
+            Cart Items: {counterprop}
+          </li>)}
+          { !showFlag &&(
           <li>
             <Link to="/">Home</Link>
           </li>
+          )}
           <li>
             <Link to="/about">About</Link>
           </li>
